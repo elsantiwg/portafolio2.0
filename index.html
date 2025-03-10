@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de ElSantiWG</title>
+
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- Partículas -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+</head>
+
+<body>
+
+    <!-- Barra de Progreso en el Scroll -->
+    <div id="scroll-progress"></div>
+
+    <!-- Fondo de Partículas -->
+    <div id="particles-js"></div>
+
+    <!-- Botón de Modo Claro/Oscuro -->
+    <button id="theme-toggle" title="Alternar Modo Claro/Oscuro">🌙</button>
+
+    <header>
+        <div class="header-overlay">
+            <div class="container" data-aos="fade-down">
+                <h1 class="glitch" data-text="ElSantiWG">ElSantiWG</h1>
+                <p id="typing"></p>
+                <a href="#projects" class="cta-btn">Ver Mis Proyectos</a>
+            </div>
+        </div>
+    </header>
+    
+
+    <!-- Sección Sobre Mí -->
+    <section id="about" data-aos="fade-up">
+        <div class="container">
+            <h2>Sobre Mí</h2>
+            <p>Hola, soy Santiago, un desarrollador web con experiencia en HTML, CSS, JavaScript y más. Me encanta crear soluciones digitales que impacten positivamente en la vida de las personas.</p>
+        </div>
+    </section>
+
+    <!-- Sección Habilidades -->
+    <section id="skills" data-aos="fade-up">
+        <div class="container">
+            <h2>Habilidades</h2>
+            <div class="skills-grid">
+                <span class="badge">HTML5</span>
+                <span class="badge">CSS3</span>
+                <span class="badge">JavaScript</span>
+                <span class="badge">TypeScript</span>
+                <span class="badge">React.js</span>
+                <span class="badge">Angular</span>
+                <span class="badge">PHP (Laravel)</span>
+                <span class="badge">Python</span>
+                <span class="badge">Java</span>
+                <span class="badge">C#</span>
+                <span class="badge">MySQL</span>
+                <span class="badge">MongoDB</span>
+                <span class="badge">Firebase</span>
+                <span class="badge">Git</span>
+                <span class="badge">Swagger</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Proyectos -->
+    <section id="projects" data-aos="fade-up">
+        <div class="container">
+            <h2>Mis Proyectos</h2>
+            <div id="repos" class="repo-grid">
+                <!-- Ejemplo de Proyecto -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Lo que Estoy Buscando -->
+    <section id="goals" data-aos="fade-up">
+        <div class="container">
+            <h2>Lo que Estoy Buscando</h2>
+            <ul>
+                <li>Oportunidades como Desarrollador Full-Stack Junior.</li>
+                <li>Colaboraciones en proyectos open-source.</li>
+                <li>Posiciones para prácticas profesionales.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Sección Testimonios -->
+    <section id="testimonials" data-aos="fade-up">
+        <div class="container">
+            <h2>Testimonios</h2>
+            <div class="testimonial">
+                <p>"ElSantiWG es un desarrollador increíble, su trabajo habla por sí mismo."</p>
+                <h4>- Cliente Satisfecho</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección GitHub Stats -->
+    <section id="github-stats" data-aos="fade-up">
+        <div class="container">
+            <h2>GitHub Stats</h2>
+            <img src="https://github-readme-stats.vercel.app/api?username=elsantiwg&show_icons=true&theme=radical" alt="GitHub Stats">
+            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=elsantiwg&layout=compact&theme=radical" alt="Top Languages">
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contact" data-aos="fade-up">
+        <div class="container">
+            <h2>Contacto</h2>
+            <p>¡Hablemos! Puedes encontrarme en:</p>
+            <ul>
+                <li><a href="https://github.com/elsantiwg" target="_blank">GitHub</a></li>
+                <li><a href="https://elsantiwg.netlify.app/" target="_blank">Mi Portafolio</a></li>
+                <li><a href="mailto:tuemail@ejemplo.com">Email</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 ElSantiWG. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts Externos -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init(); // Inicializa AOS para animaciones
+    </script>
+
+    <!-- Configuración de Partículas -->
+    <script>
+        particlesJS.load('particles-js', 'particles.json', function () {
+            console.log('Partículas cargadas');
+        });
+    </script>
+
+    <!-- Scripts Personalizados -->
+    <script src="scripts.js"></script>
+</body>
+
+</html>
