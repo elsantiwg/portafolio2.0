@@ -1,151 +1,173 @@
-<!DOCTYPE html>
-<html lang="es">
+    <!DOCTYPE html>
+    <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio de ElSantiWG</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portafolio de ElSantiWG</title>
 
-    <!-- CSS Externo -->
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+        <!-- CSS Externo -->
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
-    <!-- Partículas -->
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-</head>
+        <!-- Partículas -->
+        <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    </head>
 
-<body>
+    <body>
 
-    <!-- Fondo de Partículas -->
-    <div id="particles-js" class="absolute inset-0 z-0"></div>
+        <!-- Fondo de Partículas -->
+        <div id="particles-js" class="absolute inset-0 z-0"></div>
 
-    <!-- Barra de Progreso en el Scroll -->
-    <div id="scroll-progress"></div>
+        <!-- Barra de Progreso en el Scroll -->
+        <div id="scroll-progress"></div>
 
-    <!-- Botón de Modo Claro/Oscuro -->
-    <button id="theme-toggle" title="Alternar Modo Claro/Oscuro">🌙</button>
+        <!-- Botón de Modo Claro/Oscuro -->
+        <button id="theme-toggle" title="Alternar Modo Claro/Oscuro">🌙</button>
 
-    <header>
-        <div class="header-overlay">
-            <div class="container" data-aos="fade-down">
-                <div class="glitch-wrapper">
-                    <h1 class="glitch" data-text="ElSantiWG">ElSantiWG</h1>
+        <header>
+            <div class="header-overlay">
+                <div class="container" data-aos="fade-down">
+                    <div class="glitch-wrapper">
+                        <h1 class="glitch" data-text="ElSantiWG">ElSantiWG</h1>
+                    </div>
+                    <p id="typing"></p>
+                    <a href="#projects" class="cta-btn glass-btn">🚀 Ver Mis Proyectos</a>
                 </div>
-                <p id="typing"></p>
-                <a href="#projects" class="cta-btn glass-btn">Ver Mis Proyectos</a>
+                <canvas id="backgroundCanvas"></canvas>
             </div>
-        </div>
-    </header>
-
-<!-- Sección Sobre Mí Mejorada -->
-<section id="about" data-aos="fade-up">
-    <div class="container">
-        <h2>Sobre Mí</h2>
-        <p>¡Hola! Soy <strong>Santi</strong>, un <strong>desarrollador de software apasionado</strong> y estudiante de Ingeniería de Sistemas y Computación en la <strong>Universidad de Cundinamarca</strong>. Me encanta resolver problemas a través del código y explorar nuevas tecnologías para mejorar mis habilidades.</p>
-        <ul>
-            <li>🎓 Actualmente me especializo en <strong>React, PHP y MySQL</strong>.</li>
-            <li>🚀 Busco <strong>oportunidades emocionantes</strong> para iniciar mi carrera profesional.</li>
-            <li>🌱 Aprendo constantemente sobre <strong>desarrollo Full-Stack</strong> y buenas prácticas de programación.</li>
-            <li>💬 ¡No dudes en preguntarme sobre <strong>JavaScript, Python o desarrollo Backend</strong>!</li>
-        </ul>
-        <p>Siempre estoy listo para nuevos desafíos y proyectos donde pueda aplicar mis conocimientos y seguir creciendo como desarrollador. 🚀</p>
-    </div>
-</section>
-<!-- Sección Habilidades Mejorada -->
-<section id="skills" data-aos="fade-up">
-    <div class="container">
-        <h2>💼 Habilidades</h2>
+        </header>
         
-        <!-- Lenguajes -->
-        <h3>🚀 Lenguajes de Programación</h3>
-        <div class="skills-grid">
-            <div class="skill-item">
-                <i class="devicon-html5-plain colored"></i>
-                <span>HTML5</span>
-                <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
-            </div>
-            <div class="skill-item">
-                <i class="devicon-css3-plain colored"></i>
-                <span>CSS3</span>
-                <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
-            </div>
-            <div class="skill-item">
-                <i class="devicon-javascript-plain colored"></i>
-                <span>JavaScript</span>
-                <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
-            </div>
-            <div class="skill-item">
-                <i class="devicon-python-plain colored"></i>
-                <span>Python</span>
-                <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
-            </div>
-        </div>
 
-        <!-- Frameworks y Librerías -->
-        <h3>📦 Frameworks y Librerías</h3>
-        <div class="skills-grid">
-            <div class="skill-item">
-                <i class="devicon-react-original colored"></i>
-                <span>React.js</span>
-                <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
-            </div>
-            <div class="skill-item">
-                <i class="devicon-angularjs-plain colored"></i>
-                <span>Angular</span>
-                <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
-            </div>
-            <div class="skill-item">
-                <i class="devicon-laravel-plain colored"></i>
-                <span>Laravel (PHP)</span>
-                <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
-            </div>
-        </div>
-
-        <!-- Herramientas -->
-        <h3>🛠️ Herramientas</h3>
-        <div class="skills-grid">
-            <div class="skill-item">
-                <i class="devicon-git-plain colored"></i>
-                <span>Git</span>
-                <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
-            </div>
-            <div class="skill-item">
-                <i class="devicon-mysql-plain colored"></i>
-                <span>MySQL</span>
-                <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
-            </div>
-            <div class="skill-item">
-                <i class="devicon-firebase-plain colored"></i>
-                <span>Firebase</span>
-                <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- Sección Proyectos -->
-    <section id="projects" data-aos="fade-up">
+    <!-- Sección Sobre Mí Mejorada -->
+    <section id="about" data-aos="fade-up">
         <div class="container">
-            <h2>Mis Proyectos</h2>
-            <div id="repos" class="repo-grid"></div>
+            <h2 class="section-title">Sobre Mí</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>¡Hola! Soy <strong>Santi</strong>, un <strong>desarrollador de software apasionado</strong> y estudiante de Ingeniería de Sistemas y Computación en la <strong>Universidad de Cundinamarca</strong>. Me encanta resolver problemas a través del código y explorar nuevas tecnologías para mejorar mis habilidades.</p>
+                    <ul>
+                        <li><i class="fas fa-code"></i> <strong>React, PHP y MySQL</strong> son mis especialidades.</li>
+                        <li><i class="fas fa-rocket"></i> Busco <strong>oportunidades emocionantes</strong> para crecer profesionalmente.</li>
+                        <li><i class="fas fa-lightbulb"></i> Aprendo constantemente sobre <strong>Full-Stack y buenas prácticas</strong>.</li>
+                        <li><i class="fas fa-comments"></i> ¡Pregúntame sobre <strong>JavaScript, Python o desarrollo Backend</strong>!</li>
+                    </ul>
+                    <p>Siempre estoy listo para nuevos desafíos y proyectos donde pueda aplicar mis conocimientos y seguir creciendo como desarrollador. 🚀</p>
+                </div>
+                <div class="about-image">
+                    <img src="perfil.jpg" alt="Foto de Santi" class="profile-img">
+                </div>
+            </div>
         </div>
     </section>
-
-    <!-- Sección GitHub Stats -->
-    <section id="github-stats" data-aos="fade-up">
+    
+    <!-- Sección Habilidades Mejorada -->
+    <section id="skills" data-aos="fade-up">
         <div class="container">
-            <h2>GitHub Stats</h2>
+            <h2 class="section-title">💼 Habilidades</h2>
+    
+            <!-- Lenguajes -->
+            <h3 class="skills-category">🚀 Lenguajes de Programación</h3>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="devicon-html5-plain colored"></i>
+                    <span>HTML5</span>
+                    <div class="progress-bar"><div class="progress" data-width="90%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-css3-plain colored"></i>
+                    <span>CSS3</span>
+                    <div class="progress-bar"><div class="progress" data-width="85%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-javascript-plain colored"></i>
+                    <span>JavaScript</span>
+                    <div class="progress-bar"><div class="progress" data-width="80%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-python-plain colored"></i>
+                    <span>Python</span>
+                    <div class="progress-bar"><div class="progress" data-width="75%"></div></div>
+                </div>
+            </div>
+    
+            <!-- Frameworks y Librerías -->
+            <h3 class="skills-category">📦 Frameworks y Librerías</h3>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="devicon-react-original colored"></i>
+                    <span>React.js</span>
+                    <div class="progress-bar"><div class="progress" data-width="80%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-angularjs-plain colored"></i>
+                    <span>Angular</span>
+                    <div class="progress-bar"><div class="progress" data-width="70%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-laravel-plain colored"></i>
+                    <span>Laravel (PHP)</span>
+                    <div class="progress-bar"><div class="progress" data-width="75%"></div></div>
+                </div>
+            </div>
+    
+            <!-- Herramientas -->
+            <h3 class="skills-category">🛠️ Herramientas</h3>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="devicon-git-plain colored"></i>
+                    <span>Git</span>
+                    <div class="progress-bar"><div class="progress" data-width="85%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-mysql-plain colored"></i>
+                    <span>MySQL</span>
+                    <div class="progress-bar"><div class="progress" data-width="80%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-firebase-plain colored"></i>
+                    <span>Firebase</span>
+                    <div class="progress-bar"><div class="progress" data-width="70%"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+<!-- Sección Proyectos -->
+<section id="projects" data-aos="fade-up">
+    <div class="container">
+        <h2 class="section-title">🚀 Mis Proyectos</h2>
+        <div id="repos" class="repo-grid"></div>
+    </div>
+</section>
+
+<!-- Sección GitHub Stats -->
+<section id="github-stats" data-aos="fade-up">
+    <div class="container">
+        <h2 class="section-title">📊 GitHub Stats</h2>
+        <div class="github-stats-grid">
             <img src="https://github-readme-stats.vercel.app/api?username=elsantiwg&show_icons=true&theme=radical" alt="GitHub Stats">
             <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=elsantiwg&layout=compact&theme=radical" alt="Top Languages">
         </div>
-    </section>
+    </div>
+</section>
 
-<!-- Sección Contacto Mejorada (Sin Formulario) -->
+
+    <!-- Sección Contacto Mejorada (Sin Formulario) -->
+   <!-- Sección de Contacto Mejorada -->
 <section id="contact" data-aos="fade-up">
     <div class="container glass-card">
         <h2>📞 ¡Hablemos!</h2>
         <p>Estoy siempre abierto a nuevas oportunidades y colaboraciones. ¡Conéctate conmigo! 🚀</p>
+
+        <!-- Formulario de Contacto -->
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Tu Nombre" required>
+            <input type="email" id="email" placeholder="Tu Correo Electrónico" required>
+            <textarea id="message" placeholder="Escribe tu mensaje aquí..." required></textarea>
+            <button type="submit" class="cta-btn">Enviar Mensaje</button>
+        </form>
 
         <!-- Redes Sociales -->
         <div class="social-icons">
@@ -165,67 +187,70 @@
     </div>
 </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 ElSantiWG. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+<!-- Footer Mejorado -->
+<footer>
+    <div class="container">
+        <p>&copy; 2025 ElSantiWG. Todos los derechos reservados.</p>
+        <p>Desarrollado con ❤️ por <strong>Santi</strong></p>
+    </div>
+</footer>
 
-    <!-- Scripts Externos -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
 
-    <!-- Configuración de Partículas -->
-    <script>
-        tsParticles.load("particles-js", {
-            particles: {
-                number: {
-                    value: 50,
-                    density: { enable: true, value_area: 800 }
-                },
-                color: { value: "#F97316" }, // Naranja
-                shape: {
-                    type: "circle"
-                },
-                opacity: {
-                    value: 0.5,
-                    random: true
-                },
-                size: {
-                    value: 3,
-                    random: true
-                },
-                move: {
-                    enable: true,
-                    speed: 2
-                },
-                links: {
-                    enable: true,
-                    distance: 150,
-                    color: "#F97316",
-                    opacity: 0.4,
-                    width: 1
-                }
-            },
-            interactivity: {
-                detect_on: "canvas",
-                events: {
-                    onhover: { enable: true, mode: "repulse" },
-                    onclick: { enable: true, mode: "push" }
-                },
-                modes: {
-                    repulse: { distance: 100 },
-                    push: { particles_nb: 4 }
-                }
-            },
-            retina_detect: true
-        });
-    </script>
+        <!-- Scripts Externos -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
 
-    <!-- Scripts Personalizados -->
-    <script src="scripts.js"></script>
-</body>
+        <!-- Configuración de Partículas -->
+        <script>
+            tsParticles.load("particles-js", {
+                particles: {
+                    number: {
+                        value: 50,
+                        density: { enable: true, value_area: 800 }
+                    },
+                    color: { value: "#F97316" }, // Naranja
+                    shape: {
+                        type: "circle"
+                    },
+                    opacity: {
+                        value: 0.5,
+                        random: true
+                    },
+                    size: {
+                        value: 3,
+                        random: true
+                    },
+                    move: {
+                        enable: true,
+                        speed: 2
+                    },
+                    links: {
+                        enable: true,
+                        distance: 150,
+                        color: "#F97316",
+                        opacity: 0.4,
+                        width: 1
+                    }
+                },
+                interactivity: {
+                    detect_on: "canvas",
+                    events: {
+                        onhover: { enable: true, mode: "repulse" },
+                        onclick: { enable: true, mode: "push" }
+                    },
+                    modes: {
+                        repulse: { distance: 100 },
+                        push: { particles_nb: 4 }
+                    }
+                },
+                retina_detect: true
+            });
+        </script>
 
-</html>
+        <!-- Scripts Personalizados -->
+        <script src="scripts.js"></script>
+    </body>
+
+    </html>

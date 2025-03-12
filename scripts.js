@@ -1,4 +1,3 @@
-// scripts.js
 document.addEventListener('DOMContentLoaded', () => {
     const reposContainer = document.getElementById('repos');
     const themeToggle = document.getElementById('theme-toggle');
@@ -22,13 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     applyTheme();
 
-    // 🔄 Función para obtener los repositorios de GitHub
+    // 🔄 Obtener repositorios de GitHub
     const fetchRepos = async () => {
         try {
             const response = await fetch('https://api.github.com/users/elsantiwg/repos');
             if (!response.ok) throw new Error('Error al cargar los repositorios.');
-            const repos = await response.json();
-            allRepos = repos.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+            allRepos = (await response.json()).sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
             displayRepos();
         } catch (error) {
             console.error(error);
@@ -36,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // 📄 Función para mostrar los repositorios
+    // 📄 Mostrar repositorios
     const displayRepos = () => {
         const fragment = document.createDocumentFragment();
         const slicedRepos = allRepos.slice(displayedRepos, displayedRepos + reposPerPage);
@@ -58,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         displayedRepos < allRepos.length ? showViewMoreButton() : hideViewMoreButton();
     };
 
-    // 🔘 Mostrar botón "Ver más"
+    // 🔘 Botón "Ver más"
     const showViewMoreButton = () => {
         let viewMoreBtn = document.getElementById('view-more-btn');
         if (!viewMoreBtn) {
@@ -71,56 +69,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // 🚫 Ocultar botón "Ver más"
     const hideViewMoreButton = () => {
         const viewMoreBtn = document.getElementById('view-more-btn');
         if (viewMoreBtn) viewMoreBtn.remove();
     };
-
-    // 🌌 Fondo de partículas
-    tsParticles.load('particles-js', {
-        particles: {
-            number: {
-                value: 50,
-                density: { enable: true, value_area: 800 }
-            },
-            color: { value: "#F97316" }, // Naranja
-            shape: {
-                type: "circle"
-            },
-            opacity: {
-                value: 0.5,
-                random: true
-            },
-            size: {
-                value: 3,
-                random: true
-            },
-            move: {
-                enable: true,
-                speed: 2
-            },
-            links: {
-                enable: true,
-                distance: 150,
-                color: "#F97316",
-                opacity: 0.4,
-                width: 1
-            }
-        },
-        interactivity: {
-            detect_on: "canvas",
-            events: {
-                onhover: { enable: true, mode: "repulse" },
-                onclick: { enable: true, mode: "push" }
-            },
-            modes: {
-                repulse: { distance: 100 },
-                push: { particles_nb: 4 }
-            }
-        },
-        retina_detect: true
-    });
 
     // 📊 Barra de progreso en el scroll
     scrollProgress.id = 'scroll-progress';
@@ -137,35 +89,63 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchRepos();
 });
 
-// 🌟 Efecto de "typing" en la descripción
-const text = [
-    "Desarrollador Full-Stack",
-    "Apasionado por la tecnología",
-    "Resolviendo problemas con código",
-    "Siempre aprendiendo 🚀"
-];
-let i = 0, j = 0;
-let isDeleting = false;
-const speed = 100;
+// 🌟 Efecto de "typing"
+const textArray = ["Desarrollador Full-Stack", "Apasionado por la tecnología", "Resolviendo problemas con código", "Siempre aprendiendo 🚀"];
+let textIndex = 0, charIndex = 0, isDeleting = false;
 const typingElement = document.getElementById("typing");
 
-function type() {
-    const currentText = text[i];
-    if (isDeleting) {
-        typingElement.textContent = currentText.substring(0, j--);
-        if (j < 0) {
-            isDeleting = false;
-            i = (i + 1) % text.length;
-        }
-    } else {
-        typingElement.textContent = currentText.substring(0, j++);
-        if (j > currentText.length) {
-            isDeleting = true;
-            setTimeout(type, 1000);  // Pausa antes de borrar
-            return;
-        }
+function typeEffect() {
+    const currentText = textArray[textIndex];
+    typingElement.textContent = isDeleting ? currentText.substring(0, charIndex--) : currentText.substring(0, charIndex++);
+
+    if (!isDeleting && charIndex === currentText.length) {
+        setTimeout(() => isDeleting = true, 1000);
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        textIndex = (textIndex + 1) % textArray.length;
     }
-    setTimeout(type, isDeleting ? speed / 2 : speed);
+
+    setTimeout(typeEffect, isDeleting ? 50 : 100);
 }
 
-type();
+typeEffect();
+
+// 🎨 Animación de barras de progreso
+document.addEventListener("DOMContentLoaded", () => {
+    const progressBars = document.querySelectorAll(".progress");
+
+    function animateProgressBars() {
+        progressBars.forEach(bar => {
+            const width = bar.getAttribute("data-width");
+            bar.style.width = width;
+        });
+    }
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateProgressBars();
+                observer.disconnect(); // Solo se ejecuta una vez
+            }
+        });
+    }, { threshold: 0.5 });
+
+    observer.observe(document.querySelector("#skills"));
+});
+
+// 📩 Formulario de contacto con validación
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !email || !message) {
+        alert("Por favor, completa todos los campos.");
+        return;
+    }
+
+    alert("📩 ¡Mensaje enviado correctamente! Me pondré en contacto contigo pronto.");
+    this.reset();
+});
