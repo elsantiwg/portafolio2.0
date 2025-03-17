@@ -1,46 +1,45 @@
-    <!DOCTYPE html>
-    <html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portafolio de ElSantiWG</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de ElSantiWG</title>
 
-        <!-- CSS Externo -->
-        <link rel="stylesheet" href="styles.css">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
-        <!-- Partículas -->
-        <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-    </head>
+    <!-- Partículas -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+</head>
 
-    <body>
+<body>
+<!-- Fondo de Partículas -->
+<div id="particles-js" class="particles-background"></div>
 
-        <!-- Fondo de Partículas -->
-        <div id="particles-js" class="absolute inset-0 z-0"></div>
+<!-- Barra de Progreso en el Scroll -->
+<div id="scroll-progress" class="scroll-progress-bar"></div>
 
-        <!-- Barra de Progreso en el Scroll -->
-        <div id="scroll-progress"></div>
+<!-- Botón de Modo Claro/Oscuro -->
+<button id="theme-toggle" class="theme-toggle-btn" title="Alternar Modo Claro/Oscuro">🌙</button>
 
-        <!-- Botón de Modo Claro/Oscuro -->
-        <button id="theme-toggle" title="Alternar Modo Claro/Oscuro">🌙</button>
-
-        <header>
-            <div class="header-overlay">
-                <div class="container" data-aos="fade-down">
-                    <div class="glitch-wrapper">
-                        <h1 class="glitch" data-text="ElSantiWG">ElSantiWG</h1>
-                    </div>
-                    <p id="typing"></p>
-                    <a href="#projects" class="cta-btn glass-btn">🚀 Ver Mis Proyectos</a>
-                </div>
-                <canvas id="backgroundCanvas"></canvas>
+<!-- Header -->
+<header class="hero-section">
+    <div class="header-overlay">
+        <div class="container" data-aos="fade-down">
+            <div class="glitch-wrapper">
+                <h1 class="glitch" data-text="ElSantiWG">ElSantiWG</h1>
             </div>
-        </header>
-        
+            <p id="typing" class="typing-effect"></p>
+            <a href="#projects" class="cta-btn glass-btn">🚀 Ver Mis Proyectos</a>
+        </div>
+        <canvas id="backgroundCanvas" class="background-canvas"></canvas>
+    </div>
+</header>
 
-    <!-- Sección Sobre Mí Mejorada -->
+    <!-- Sección Sobre Mí -->
     <section id="about" data-aos="fade-up">
         <div class="container">
             <h2 class="section-title">Sobre Mí</h2>
@@ -61,13 +60,13 @@
             </div>
         </div>
     </section>
-    
-    <!-- Sección Habilidades Mejorada -->
+
+    <!-- Sección Habilidades -->
     <section id="skills" data-aos="fade-up">
         <div class="container">
             <h2 class="section-title">💼 Habilidades</h2>
-    
-            <!-- Lenguajes -->
+
+            <!-- Lenguajes de Programación -->
             <h3 class="skills-category">🚀 Lenguajes de Programación</h3>
             <div class="skills-grid">
                 <div class="skill-item">
@@ -91,7 +90,7 @@
                     <div class="progress-bar"><div class="progress" data-width="75%"></div></div>
                 </div>
             </div>
-    
+
             <!-- Frameworks y Librerías -->
             <h3 class="skills-category">📦 Frameworks y Librerías</h3>
             <div class="skills-grid">
@@ -111,7 +110,7 @@
                     <div class="progress-bar"><div class="progress" data-width="75%"></div></div>
                 </div>
             </div>
-    
+
             <!-- Herramientas -->
             <h3 class="skills-category">🛠️ Herramientas</h3>
             <div class="skills-grid">
@@ -133,124 +132,121 @@
             </div>
         </div>
     </section>
-    
-<!-- Sección Proyectos -->
-<section id="projects" data-aos="fade-up">
-    <div class="container">
-        <h2 class="section-title">🚀 Mis Proyectos</h2>
-        <div id="repos" class="repo-grid"></div>
-    </div>
-</section>
 
-<!-- Sección GitHub Stats -->
-<section id="github-stats" data-aos="fade-up">
-    <div class="container">
-        <h2 class="section-title">📊 GitHub Stats</h2>
-        <div class="github-stats-grid">
-            <img src="https://github-readme-stats.vercel.app/api?username=elsantiwg&show_icons=true&theme=radical" alt="GitHub Stats">
-            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=elsantiwg&layout=compact&theme=radical" alt="Top Languages">
+    <!-- Sección Proyectos -->
+    <section id="projects" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">🚀 Mis Proyectos</h2>
+            <div id="repos" class="repo-grid"></div>
         </div>
-    </div>
-</section>
+    </section>
 
-
-    <!-- Sección Contacto Mejorada (Sin Formulario) -->
-   <!-- Sección de Contacto Mejorada -->
-<section id="contact" data-aos="fade-up">
-    <div class="container glass-card">
-        <h2>📞 ¡Hablemos!</h2>
-        <p>Estoy siempre abierto a nuevas oportunidades y colaboraciones. ¡Conéctate conmigo! 🚀</p>
-
-        <!-- Formulario de Contacto -->
-        <form id="contact-form">
-            <input type="text" id="name" placeholder="Tu Nombre" required>
-            <input type="email" id="email" placeholder="Tu Correo Electrónico" required>
-            <textarea id="message" placeholder="Escribe tu mensaje aquí..." required></textarea>
-            <button type="submit" class="cta-btn">Enviar Mensaje</button>
-        </form>
-
-        <!-- Redes Sociales -->
-        <div class="social-icons">
-            <a href="https://github.com/elsantiwg" target="_blank" class="social-link">
-                <i class="devicon-github-original"></i>
-                <span>GitHub</span>
-            </a>
-            <a href="https://www.linkedin.com/in/elsantiwg" target="_blank" class="social-link">
-                <i class="devicon-linkedin-plain"></i>
-                <span>LinkedIn</span>
-            </a>
-            <a href="mailto:tuemail@ejemplo.com" class="social-link">
-                <i class="devicon-google-plain"></i>
-                <span>Email</span>
-            </a>
+    <!-- Sección GitHub Stats -->
+    <section id="github-stats" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">📊 GitHub Stats</h2>
+            <div class="github-stats-grid">
+                <img src="https://github-readme-stats.vercel.app/api?username=elsantiwg&show_icons=true&theme=radical" alt="GitHub Stats">
+                <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=elsantiwg&layout=compact&theme=radical" alt="Top Languages">
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Footer Mejorado -->
-<footer>
-    <div class="container">
-        <p>&copy; 2025 ElSantiWG. Todos los derechos reservados.</p>
-        <p>Desarrollado con ❤️ por <strong>Santi</strong></p>
-    </div>
-</footer>
+    <!-- Sección Contacto -->
+    <section id="contact" data-aos="fade-up">
+        <div class="container glass-card">
+            <h2>📞 ¡Hablemos!</h2>
+            <p>Estoy siempre abierto a nuevas oportunidades y colaboraciones. ¡Conéctate conmigo! 🚀</p>
 
+            <!-- Formulario de Contacto -->
+            <form id="contact-form">
+                <input type="text" id="name" placeholder="Tu Nombre" required>
+                <input type="email" id="email" placeholder="Tu Correo Electrónico" required>
+                <textarea id="message" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                <button type="submit" class="cta-btn">Enviar Mensaje</button>
+            </form>
 
-        <!-- Scripts Externos -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-        <script>
-            AOS.init();
-        </script>
+            <!-- Redes Sociales -->
+            <div class="social-icons">
+                <a href="https://github.com/elsantiwg" target="_blank" class="social-link">
+                    <i class="devicon-github-original"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/elsantiwg" target="_blank" class="social-link">
+                    <i class="devicon-linkedin-plain"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="mailto:tuemail@ejemplo.com" class="social-link">
+                    <i class="devicon-google-plain"></i>
+                    <span>Email</span>
+                </a>
+            </div>
+        </div>
+    </section>
 
-        <!-- Configuración de Partículas -->
-        <script>
-            tsParticles.load("particles-js", {
-                particles: {
-                    number: {
-                        value: 50,
-                        density: { enable: true, value_area: 800 }
-                    },
-                    color: { value: "#F97316" }, // Naranja
-                    shape: {
-                        type: "circle"
-                    },
-                    opacity: {
-                        value: 0.5,
-                        random: true
-                    },
-                    size: {
-                        value: 3,
-                        random: true
-                    },
-                    move: {
-                        enable: true,
-                        speed: 2
-                    },
-                    links: {
-                        enable: true,
-                        distance: 150,
-                        color: "#F97316",
-                        opacity: 0.4,
-                        width: 1
-                    }
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ElSantiWG. Todos los derechos reservados.</p>
+            <p>Desarrollado con ❤️ por <strong>Santi</strong></p>
+        </div>
+    </footer>
+
+    <!-- Scripts Externos -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- Configuración de Partículas -->
+    <script>
+        tsParticles.load("particles-js", {
+            particles: {
+                number: {
+                    value: 50,
+                    density: { enable: true, value_area: 800 }
                 },
-                interactivity: {
-                    detect_on: "canvas",
-                    events: {
-                        onhover: { enable: true, mode: "repulse" },
-                        onclick: { enable: true, mode: "push" }
-                    },
-                    modes: {
-                        repulse: { distance: 100 },
-                        push: { particles_nb: 4 }
-                    }
+                color: { value: "#F97316" }, // Naranja
+                shape: {
+                    type: "circle"
                 },
-                retina_detect: true
-            });
-        </script>
+                opacity: {
+                    value: 0.5,
+                    random: true
+                },
+                size: {
+                    value: 3,
+                    random: true
+                },
+                move: {
+                    enable: true,
+                    speed: 2
+                },
+                links: {
+                    enable: true,
+                    distance: 150,
+                    color: "#F97316",
+                    opacity: 0.4,
+                    width: 1
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: { enable: true, mode: "repulse" },
+                    onclick: { enable: true, mode: "push" }
+                },
+                modes: {
+                    repulse: { distance: 100 },
+                    push: { particles_nb: 4 }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
 
-        <!-- Scripts Personalizados -->
-        <script src="scripts.js"></script>
-    </body>
+    <!-- Scripts Personalizados -->
+    <script src="scripts.js"></script>
+</body>
 
-    </html>
+</html>
